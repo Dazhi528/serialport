@@ -1,0 +1,3 @@
+rootProject.name='200518_SerialPort_studio'
+include ':sample'
+include ':serialport'
