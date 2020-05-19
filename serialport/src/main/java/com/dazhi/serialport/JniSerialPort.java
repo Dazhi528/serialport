@@ -10,7 +10,7 @@ import java.io.FileDescriptor;
  * 创建日期：2020/5/19 11:17
  * 修改日期：2020/5/19 11:17
  */
-class JniSerialPort {
+public class JniSerialPort {
 
     static {
         System.loadLibrary("serial-port-lib");
@@ -19,5 +19,8 @@ class JniSerialPort {
     native FileDescriptor open(String path, int baudrate, int databits, int stopbits, char parity);
 
     native void close();
+
+    // 测试方法
+    public static native String sayHello();
 
 }

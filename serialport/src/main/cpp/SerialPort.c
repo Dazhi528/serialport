@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include "SerialPort.h"
 
+
 // 私有方法,没有在头文件暴漏出去
 static speed_t getBaudrate(jint baudrate);
 static void setParameter(jint fd, jint databits, jint stopbits, jchar parity);
@@ -263,3 +264,9 @@ options.c_cc[VMIN] = 0;
 一次读取 13 个字节值。同时，得出这样的结论，如果读卡器送出的数据为 n 个字节，那么就把 VMIN=n ，这样
 一次读取的信息正好为读卡器送出的信息，并且读取的时候不需要进行循环读取。
 */
+
+// 测试方法
+JNIEXPORT jstring JNICALL
+Java_com_dazhi_serialport_JniSerialPort_sayHello(JNIEnv *env, jclass thiz) {
+    return (*env)->NewStringUTF(env, "Hello World!");
+}
